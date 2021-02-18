@@ -19,12 +19,17 @@ if (typeof window === 'undefined'){
 
 
 function _makeGrid() {
-  let row = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'];
+  // let row = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined];
+  let row = new Array(8)
   let grid = []   
   for (let i = 0; i < 8; i++) {
       grid.push(row.slice());
-    }
-    return grid;
+    }     
+  grid[3][4] = new Piece('black');
+  grid[4][3] = new Piece('black');
+  grid[3][3] = new Piece('white');
+  grid[4][4] = new Piece('white');
+  return grid;
 }
 
 /**
@@ -32,7 +37,9 @@ function _makeGrid() {
  */
 function Board () {
   this.grid = _makeGrid();
+ 
 }
+
 
 Board.DIRS = [
   [ 0,  1], [ 1,  1], [ 1,  0],
@@ -44,6 +51,9 @@ Board.DIRS = [
  * Checks if a given position is on the Board.
  */
 Board.prototype.isValidPos = function (pos) {
+  if ((pos[0] < 0 || pos[1] < 0) || (pos[0] > 7 || pos[1] > 7))
+  {return false;}
+  return true;
 };
 
 /**
