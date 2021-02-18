@@ -1,16 +1,25 @@
 /* PHASE 0: Sidebar */
 .profile-picture {
-    background-image: url(images\cat.jpg);
+    /* background-image: url(images\cat.jpg); */
     display: block;
+    position: relative;
+    margin-top: -75px;
+}
+
+.profile-picture img {
+    padding-bottom: 20px;
     width: 100%;
     height: auto;
-
 }
 
 .profile-info {
 
 }
 
-.profile-nav{
+.profile-nav li{
+    border-bottom: solid 1px gray;
+}
 
+.profile-nav li:first-child{
+    border-top: solid 1px gray;
 }
