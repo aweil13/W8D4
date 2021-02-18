@@ -8,8 +8,23 @@ if (typeof window === 'undefined'){
  * Returns a 2D array (8 by 8) with two black pieces at [3, 4] and [4, 3]
  * and two white pieces at [3, 3] and [4, 4]
  */
-function _makeGrid () {
-  let grid = new Array(8);
+// function _makeGrid () {
+//   let grid = new Array(8);
+//    for (let index = 0; index < grid.length; index++) {
+//      let element = grid[index];
+//      element = new Array(8, "_");
+//    }
+//    return grid;
+// }
+
+
+function _makeGrid() {
+  let row = ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'];
+  let grid = []   
+  for (let i = 0; i < 8; i++) {
+      grid.push(row.slice());
+    }
+    return grid;
 }
 
 /**
