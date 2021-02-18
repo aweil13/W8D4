@@ -1,2 +1,10 @@
 /* PHASE 2: Thumbs */
+.profile-friends-group img{
+    display: block;
+}
+
+.profile-friends-group li{
+    display: flex;
+    flex-flow: column wrap;
+}
 
