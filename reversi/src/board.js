@@ -21,7 +21,7 @@ if (typeof window === 'undefined'){
 function _makeGrid() {
   // let row = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined];
   let row = new Array(8)
-  let grid = []   
+  let grid = []    
   for (let i = 0; i < 8; i++) {
       grid.push(row.slice());
     }     
@@ -61,6 +61,8 @@ Board.prototype.isValidPos = function (pos) {
  * throwing an Error if the position is invalid.
  */
 Board.prototype.getPiece = function (pos) {
+    if (!this.isValidPos(pos)) {throw new Error('Not valid pos!')};
+    return this.grid[pos[0]][pos[1]];
 };
 
 /**
@@ -68,12 +70,21 @@ Board.prototype.getPiece = function (pos) {
  * matches a given color.
  */
 Board.prototype.isMine = function (pos, color) {
+  if (this.getPiece(pos) === undefined) {
+    return undefined;
+  }
+  let piece = this.getPiece(pos); 
+  return piece.color === color;
 };
 
 /**
  * Checks if a given position has a piece on it.
  */
 Board.prototype.isOccupied = function (pos) {
+  if (this.getPiece(pos) === undefined) {
+    return false;
+  }
+  else {return true;}
 };
 
 /**
@@ -90,6 +101,7 @@ Board.prototype.isOccupied = function (pos) {
  * Returns empty array if no pieces of the opposite color are found.
  */
 Board.prototype._positionsToFlip = function(pos, color, dir, piecesToFlip){
+  
 };
 
 /**
