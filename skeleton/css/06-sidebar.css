@@ -3,21 +3,39 @@
     /* background-image: url(images\cat.jpg); */
     display: block;
     position: relative;
-    margin-top: -75px;
+    margin-top: -120px;
 }
 
 .profile-picture img {
-    padding-bottom: 20px;
+    margin-bottom: 20px;
     width: 100%;
     height: auto;
+    border: solid 1px black;
+    border-radius: 5px;
 }
 
-.profile-info {
 
+.content-sidebar h2{
+    font-weight: 700;
+    font-size: 24px;
 }
+
+.profile-info p {
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
 
 .profile-nav li{
     border-bottom: solid 1px gray;
+    font-weight: 700;
+    padding: 5px;
+}
+.profile-nav li:hover {
+    border-bottom: solid 1px gray;
+    font-weight: 700;
+    padding: 5px;
+    background-color: lightgray;
 }
 
 .profile-nav li:first-child{
